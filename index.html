@@ -5,7 +5,7 @@
     <title>○×クイズアプリ ホーム画面</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             text-align: center;
             margin: 0;
             padding: 0;
@@ -14,6 +14,8 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            background-color: #333;
+            color: #fff;
         }
         header {
             position: fixed;
@@ -23,38 +25,40 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: #f8f8f8;
+            background-color: #222;
             padding: 10px 20px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.5);
             width: 100%;
             z-index: 1000;
         }
-        .home-button {
+        .home-button, .title {
             font-size: 16px;
             padding: 8px 16px;
             text-decoration: none;
-            color: black;
-            background-color: #e0e0e0;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .title {
-            font-size: 20px;
-        }
-        .challenge-button {
-            width: 300px;
-            font-size: 20px;
-            padding: 15px 30px;
-            background-color: #4CAF50;
-            color: white;
+            color: #ccc;
+            background-color: #444;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s;
         }
+        .home-button:hover, .title:hover {
+            background-color: #555;
+        }
+        .challenge-button {
+            width: 300px;
+            font-size: 20px;
+            padding: 15px 30px;
+            background-color: #555;
+            color: #eee;
+            border: 1px solid #777;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
         .challenge-button:hover {
-            background-color: #45a049;
+            background-color: #666;
+            color: #fff;
         }
         main {
             flex-grow: 1;

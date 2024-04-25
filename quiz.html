@@ -2,41 +2,52 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>○×クイズアプリ</title>
+    <title>○×クイズアプリ クイズ画面</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             text-align: center;
             margin: 0;
             padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #333;
+            color: #fff;
         }
         header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: #f8f8f8;
+            background-color: #222;
             padding: 10px 20px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+            width: 100%;
+            z-index: 1000;
         }
-        .home-button {
+        .home-button, .timer, .progress {
             font-size: 16px;
             padding: 8px 16px;
             text-decoration: none;
-            color: black;
-            background-color: #e0e0e0;
+            color: #ccc;
+            background-color: #444;
             border: none;
             border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
         }
-        .progress {
-            font-size: 16px;
-        }
-        .timer {
-            color: red;
-            font-size: 16px;
+        .home-button:hover, .timer:hover, .progress:hover {
+            background-color: #555;
         }
         .question {
             font-size: 24px;
-            margin: 40px 20px 20px;
+            margin: 100px 20px 20px;
         }
         .answers {
             margin: 20px;
@@ -45,11 +56,22 @@
             width: 100px;
             height: 50px;
             font-size: 20px;
+            padding: 10px;
             margin: 10px;
+            background-color: #555;
+            color: #eee;
+            border: 1px solid #777;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .button:hover {
+            background-color: #666;
+            color: #fff;
         }
         .feedback {
             font-size: 18px;
-            color: green;
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -70,7 +92,6 @@
 
     <script>
         function answer(isCorrect) {
-            // ここで回答の正誤を判定し、フィードバックを更新します
             if (isCorrect) {
                 document.querySelector('.feedback').textContent = '正解！';
                 document.querySelector('.feedback').style.color = 'green';
