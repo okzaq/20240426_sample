@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>○×クイズアプリ ホーム画面</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f8f8f8;
+            padding: 10px 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            width: 100%;
+            z-index: 1000;
+        }
+        .home-button {
+            font-size: 16px;
+            padding: 8px 16px;
+            text-decoration: none;
+            color: black;
+            background-color: #e0e0e0;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .title {
+            font-size: 20px;
+        }
+        .challenge-button {
+            width: 300px;
+            font-size: 20px;
+            padding: 15px 30px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .challenge-button:hover {
+            background-color: #45a049;
+        }
+        main {
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding-top: 60px; /* Adjust based on header height */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <button class="home-button" onclick="location.href='index.html'">ホーム</button>
+        <div class="title">○×クイズアプリ</div>
+        <div style="width: 80px;"> <!-- 占位用空白ブロック -->
+        </div>
+    </header>
+    <main>
+        <button class="challenge-button" onclick="location.href='quiz.html'">挑戦する</button>
+    </main>
+</body>
+</html>

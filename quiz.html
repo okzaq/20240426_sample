@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>○×クイズアプリ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f8f8f8;
+            padding: 10px 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .home-button {
+            font-size: 16px;
+            padding: 8px 16px;
+            text-decoration: none;
+            color: black;
+            background-color: #e0e0e0;
+            border: none;
+            border-radius: 5px;
+        }
+        .progress {
+            font-size: 16px;
+        }
+        .timer {
+            color: red;
+            font-size: 16px;
+        }
+        .question {
+            font-size: 24px;
+            margin: 40px 20px 20px;
+        }
+        .answers {
+            margin: 20px;
+        }
+        .button {
+            width: 100px;
+            height: 50px;
+            font-size: 20px;
+            margin: 10px;
+        }
+        .feedback {
+            font-size: 18px;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <button class="home-button" onclick="location.href='index.html'">ホーム</button>
+        <div class="timer">残り時間: 30秒</div>
+        <div class="progress">第3問/全10問</div>
+    </header>
+    <div class="question">
+        ここにクイズの質問が表示されます。
+    </div>
+    <div class="answers">
+        <button class="button" onclick="answer(true)">○</button>
+        <button class="button" onclick="answer(false)">×</button>
+    </div>
+    <div class="feedback">ここにフィードバックが表示されます。</div>
+
+    <script>
+        function answer(isCorrect) {
+            // ここで回答の正誤を判定し、フィードバックを更新します
+            if (isCorrect) {
+                document.querySelector('.feedback').textContent = '正解！';
+                document.querySelector('.feedback').style.color = 'green';
+            } else {
+                document.querySelector('.feedback').textContent = '不正解...';
+                document.querySelector('.feedback').style.color = 'red';
+            }
+        }
+    </script>
+</body>
+</html>
